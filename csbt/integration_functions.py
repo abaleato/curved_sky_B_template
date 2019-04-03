@@ -3,23 +3,18 @@ import shts
 import math
 
 class B_template(object):
-    """ base class for a quadratic estiamtor q^{XY}(L),
-    which can be run on fields \bar{X} and \bar{Y} as
+    """ B-mode template inspired by the implementation of the lensing quadratic estimators
+        in appendix (A.2) of https://arxiv.org/pdf/1502.01591.pdf
+        
+    The estimator, q^{XY}(L), can be run on fields \bar{X} and \bar{Y} as
 
     q^{XY}(L) = 1/2 \int{d^2 l_X} \int{d^2 l_Y}
                     W^{XY}(l_X, l_Y, L) \bar{X}(l_X) \bar{Y}(l_Y)
 
     with l_X + l_Y = L.
 
-    the weight function W^{s, XY} must be separable. for
-    flat-sky calculation it is encoded as
-
-    W^{XY} = \sum_{i=0}^{N} \int{d^2 z}
-                    (e^{+i*2\pi*s^{i,X}+i*(l_X.z)} W^{i,X}(l_X)) *
-                     (e^{+i*2\pi*s^{i,Y}+i*(l_Y.z)} W^{i,Y}(l_Y)) *
-                      (e^{-i*2\pi*s^{i,L}+i*( -L.z)} W^{i,L}( L ))
-
-    for full-sky calculations it is encoded as
+    the weight function W^{s, XY} must be separable. For
+    full-sky calculations it is encoded as
 
     W^{XY} = \sum_{i=0}^{N_i} \int{d^2 n}
                     {}_s^{i,X}Y_{l_X m_X}(n) W^{i,X}(l_X) *
@@ -43,19 +38,11 @@ class B_template(object):
             return self.eval_fullsky( barX, barY, **kwargs )
 
     def eval_fullsky( self, barX, barY ):
-        """ evaluate this quadratic estimator on the full-sky, returning
-
-        q^{XY}(L) = 1/2 \sum_{l_X} \sum_{l_Y}
-                     W^{XY}(l_X, l_Y, L) \bar{X}(l_X) \bar{Y}(l_Y)
-
-        where L, l_X and l_Y represent (l,m) spherical harmonic modes.
-
+        """
         inputs:
-             * barX            = input field \bar{X}. should be 2D complex array
-                                 containing the harmonic modes for the X field
+             * barX            = input field \bar{X}. harmonic modes for the X field
                                  (in the 'vlm' indexing scheme, see shts.util).
-             * barY            = input field \bar{Y}. should be 2D complex array
-                                 containing the harmonic modes for the X field
+             * barY            = input field \bar{Y}. harmonic modes for the X field
                                  (in the 'vlm' indexing scheme, see shts.util).
         """
         lmax   = self.lmax
