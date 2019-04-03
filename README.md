@@ -4,7 +4,8 @@ Method for evaluating the lensing B-modes on the curved-sky to leading order in 
 
 #### Usage
 ```
-B_template_vlm = curved_sky_B_template.integration_functions.weights.B_template(np.ones(lmax)).eval_fullsky(wiener_filtered_phi, wiener_filtered_e_alm)
+import csbt
+B_template_vlm = csbt.integration_functions.weights.B_template(np.ones(lmax)).eval_fullsky(wiener_filtered_phi, wiener_filtered_e_alm)
 
 # Extract the gradient and curl modes. Discard the latter.
 g_B_alm, c_B_alm = curved_sky_B_template.shts.util.vlm2alm(B_template_vlm)
