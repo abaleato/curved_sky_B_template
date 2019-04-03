@@ -1,6 +1,6 @@
 # curved_sky_B_template
 
-Functions for evaluating the perturbative lensing B-modes on the curved-sky. This fast implementation drinks heavily from D.Hanson's [Quicklens](https://github.com/dhanson/quicklens) code which was used in the [Planck 2015 lensing analysis](https://arxiv.org/pdf/1502.01591.pdf) and itself based on the position-space approach of [Dvorkin & Smith] (https://arxiv.org/pdf/0812.1566.pdf).
+Method for evaluating the lensing B-modes on the curved-sky to leading order in their perturbative expansion. This fast implementation drinks heavily from D.Hanson's [Quicklens](https://github.com/dhanson/quicklens) code which was used in the [Planck 2015 lensing analysis](https://arxiv.org/pdf/1502.01591.pdf) and itself based on the position-space approach of [Dvorkin and Smith] (https://arxiv.org/pdf/0812.1566.pdf).
 
 #### Usage
 ```
