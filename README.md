@@ -10,7 +10,7 @@ B_template_vlm = csbt.integration_functions.weights.B_template(np.ones(lmax)).ev
 # Extract the gradient and curl modes. Discard the latter.
 g_B_alm, c_B_alm = curved_sky_B_template.shts.util.vlm2alm(B_template_vlm)
 ```
-where `wiener_filtered_phi` and `wiener_filtered_e_alm` are numpy arrays of length `lmax` containing the Wiener-filtered $$C_l^{\phi\phi}$$ and $$C_l^{EE, obs}$$.
+where `wiener_filtered_phi` and `wiener_filtered_e_alm` are numpy arrays of length `lmax` containing the Wiener-filtered C_l^{\phi\phi} and C_l^{EE, obs}.
 #### Installation
 The code can be run either from this directory, or installed by 
 running ```python setup.py install```.
