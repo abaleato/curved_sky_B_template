@@ -45,4 +45,4 @@ class B_template_weights(integration_functions.B_template):
     def minus_onehalf(self, l, lx=None, ly=None):
         return -0.5
     def plus_i(self, l, lx=None, ly=None):
-return 1.j
+        return 1.j
