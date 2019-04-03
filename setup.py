@@ -26,7 +26,7 @@ def configuration(parent_package='',top_path=None):
 if __name__ == "__main__":
     from numpy.distutils.core import setup
 
-    packages = ["csbt","csbt.integration_functions","csbt.shts","csbt.math"]
+    packages = ["csbt","csbt.shts","csbt.math"]
 
     setup(packages=packages,
           configuration=configuration)
