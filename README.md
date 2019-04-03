@@ -12,7 +12,7 @@ g_B_alm, c_B_alm = curved_sky_B_template.shts.util.vlm2alm(B_template_vlm)
 
 #### Installation
 The code can be run either from this directory, or installed by 
-running "python setup.py install".
+running ```python setup.py install```.
 
 The code is primarily written in Python, although some low level 
 spherical harmonic transform (SHT) routines are written in Fortran 
@@ -20,9 +20,9 @@ for speed. In order to use these SHT routines, the code must be
 compiled. This is done automatically when installing, however if 
 running the code without installing it needs to be built with
 
-"python setup.py build_ext --inplace"
+```python setup.py build_ext --inplace```
 
 Depending on system, you may need to specify a fortran compiler. 
 For example
 
-"python setup.py build_ext --inplace --fcompiler=gnu95"
+```python setup.py build_ext --inplace --fcompiler=gnu95```
