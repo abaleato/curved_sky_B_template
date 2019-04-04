@@ -27,3 +27,4 @@ Depending on system, you may need to specify a fortran compiler.
 For example
 
 ```python setup.py build_ext --inplace --fcompiler=gnu95```
+
