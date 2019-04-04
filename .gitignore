@@ -1,4 +1,4 @@
 build/
-*.pyc
+*.pyc #ignore binary files
 *.c
 *.so
