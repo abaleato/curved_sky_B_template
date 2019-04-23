@@ -9,7 +9,7 @@ import csbt
 B_template_vlm = csbt.weights.B_template_weights(np.ones(lmax+1)).eval_fullsky(wiener_filtered_phi_alm, wiener_filtered_e_alm)
 
 # Extract the gradient and curl modes. Discard the latter.
-g_B_alm, c_B_alm = curved_sky_B_template.shts.util.vlm2alm(B_template_vlm)
+g_B_alm, c_B_alm = csbt.shts.util.vlm2alm(B_template_vlm)
 ```
 where `wiener_filtered_phi` and `wiener_filtered_e_alm` are numpy arrays of length `lmax` containing the Wiener-filtered a_{lm}^{\phi} and a_{lm}^{E, obs}.
 #### Installation
