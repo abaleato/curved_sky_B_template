@@ -2,8 +2,8 @@ import numpy as np
 import shts
 import math
 
-class B_template(object):
-    """ B-mode template inspired by the implementation of the lensing quadratic estimators
+class First_order_template(object):
+    """ First-order lensing template inspired by the implementation of the lensing quadratic estimators
         in appendix (A.2) of https://arxiv.org/pdf/1502.01591.pdf
         
     The estimator, q^{XY}(L), can be run on fields \bar{X} and \bar{Y} as
