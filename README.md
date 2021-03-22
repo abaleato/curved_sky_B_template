@@ -1,14 +1,15 @@
 # curved_sky_B_template
 
-Method for evaluating the lensing B-modes on the curved-sky to leading order in their perturbative expansion, given sets of observed (and Wiener-filtered) E-mode and lensing potential alm's. This fast implementation drinks heavily from D.Hanson's [Quicklens](https://github.com/dhanson/quicklens) code used in the [Planck 2015 lensing analysis](https://arxiv.org/pdf/1502.01591.pdf) and itself based on the position-space approach of [Dvorkin & Smith](https://arxiv.org/pdf/0812.1566.pdf).
+Method for evaluating the lensing B-modes on the curved-sky to leading order in their perturbative expansion, given sets of observed (and Wiener-filtered) E-mode and lensing potential alm's. This fast implementation drinks heavily from D.Hanson's [Quicklens](https://github.com/dhanson/quicklens) code used in the [Planck 2015 lensing analysis](https://arxiv.org/pdf/1502.01591.pdf) and itself based on the position-space approach of [Dvorkin & Smith](https://arxiv.org/pdf/0812.1566.pdf). See curved_sky_B_template_implementation_notes.pdf for mathematical details.
+
 
 #### Usage
 ```
 import csbt
-B_template_vlm = csbt.weights.B_template_weights(np.ones(lmax)).eval_fullsky(wiener_filtered_phi_alm, wiener_filtered_e_alm)
+B_template_vlm = csbt.weights.B_template_weights(np.ones(lmax+1)).eval_fullsky(wiener_filtered_phi_alm, wiener_filtered_e_alm)
 
 # Extract the gradient and curl modes. Discard the latter.
-g_B_alm, c_B_alm = curved_sky_B_template.shts.util.vlm2alm(B_template_vlm)
+g_B_alm, c_B_alm = csbt.shts.util.vlm2alm(B_template_vlm)
 ```
 where `wiener_filtered_phi` and `wiener_filtered_e_alm` are numpy arrays of length `lmax` containing the Wiener-filtered a_{lm}^{\phi} and a_{lm}^{E, obs}.
 #### Installation

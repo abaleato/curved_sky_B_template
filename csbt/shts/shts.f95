@@ -220,8 +220,8 @@ subroutine map2vtm(ntht, nphi, lmax, phi, map, vtm)
   end do
 
 !$omp parallel do default(shared)
-  do p=1,nphi
-     do m=1,lmax
+  do m=1,lmax
+     do p=1,nphi
         vtm(:,+m) = vtm(:,+m) + map(:,p) * &
              (cos(phi(p)*m)-(0.0,1.0)*sin(phi(p)*m))
         vtm(:,-m) = vtm(:,-m) + map(:,p) * &
