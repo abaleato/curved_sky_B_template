@@ -87,8 +87,8 @@ class T_template_weights(integration_functions.First_order_template):
     def wo_ml(self, l, lx=None, ly=None):
         return l * (l + 1.)
 
-    def one(self):
+    def one(self, l, lx=None, ly=None):
         return 1.
 
-    def minus_one(self):
+    def minus_one(self, l, lx=None, ly=None):
         return -1.

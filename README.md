@@ -11,10 +11,10 @@ B_template_vlm = csbt.weights.B_template_weights(np.ones(lmax+1)).eval_fullsky(w
 # Extract the gradient and curl modes. Discard the latter.
 g_B_alm, c_B_alm = csbt.shts.util.vlm2alm(B_template_vlm)
 ```
-where `wiener_filtered_phi` and `wiener_filtered_e_alm` are numpy arrays of length `lmax` containing the Wiener-filtered a_{lm}^{\phi} and a_{lm}^{E, obs}.
+where `wiener_filtered_phi` and `wiener_filtered_e_alm` are numpy arrays of length csbt.shts.util.lmax2nlm(lmax), and in healpy's alm indexing scheme, containing the Wiener-filtered a_{lm}^{\phi} and a_{lm}^{E, obs}.
 #### Installation
 The code can be run either from this directory, or installed by 
-running ```python setup.py install```.
+running ```python setup.py install```. An editable installation can also be achieved by running ```pip install -e .''' .
 
 The code is primarily written in Python, although some low level 
 spherical harmonic transform (SHT) routines are written in Fortran 
